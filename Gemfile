@@ -71,3 +71,5 @@ group :test do
   gem "webdrivers"
 end
 gem 'tzinfo-data', '1.2014.5'
+gem 'devise'
+gem "letter_opener_web", group: :development
