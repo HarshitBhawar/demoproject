@@ -19,6 +19,40 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-light bg-light">
+  
+ 
+  <a class="btn btn-outline-primary" >
+    <h1><B>Job Portal</B></h1>
+    </a>
+
+
+  <% if current_user.present? %>
+  <form class="form-inline">
+    <a class="btn btn-outline-primary" href="/" role="button">
+    Home
+    </a>
+    <div style="padding-left: 10px;">
+     
+      <a class="btn btn-outline-success" href="/" role="button">
+      Logout
+      </a>
+    </div>
+  </form>
+  
+  <% else %>
+  <form class="form-inline">
+    <a class="btn btn-outline-primary" href="/login" role="button">
+    Login
+    </a>
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-success" href="/signup" role="button">
+      Sign Up
+      </a>
+    </div>
+  </form>
+  <% end %>
+</nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

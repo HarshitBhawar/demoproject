@@ -1,6 +1,8 @@
 class JobsController < ApplicationController
     def index
         @jobs=Job.all
+        @user=current_user
+        @jobss=@user.jobs.all
     end
 
     def new
@@ -24,14 +26,29 @@ class JobsController < ApplicationController
     end
 
     def edit
-       @job=Job.find(params[:id]) 
+        @user=current_user
+       @job=@user.jobs.find(params[:id]) 
     end
     
     def update
+        # @job = Job.find(params[:id])
+        @user=current_user
+        @job=@user.jobs.find(params[:id])
+
+        if @job.update(params.require(:job).permit(:title, :company , :experience , :salary ,:user_id))
+          redirect_to jobs_path
+        else
+          render :edit
+        end
 
     end
     
-    def delete
+    def destroy
+        @user=current_user
+        @job = @user.jobs.find(params[:id])
+        @job.destroy
+    
+        redirect_to jobs_path
     end
   
 end

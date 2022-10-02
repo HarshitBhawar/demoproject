@@ -1,0 +1,38 @@
+
+
+<%  if current_user.employer? %>
+    <h1>Hello Employer </h1>
+    <h1>See Post Details </h1><br>
+    <h4>Job Profile :<%= @job.title %></h4>
+
+    <h4>Company :<%= @job.company %></h4>
+
+    <h4>Experience :<%= @job.experience %></h4>
+
+    <h4>Salary :<%= @job.salary %></h4><br>
+
+    
+    <%= button_to "Edit", edit_job_path(@job) %><br>
+    <%= button_to "Destroy", job_path(@job), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %>
+
+    
+<%  else current_user.applicant? %>
+    <h1>Hello Applicant</h1>
+    <h1>See Post Details </h1><br>
+    <h4>Job Profile :<%= @job.title %></h4>
+
+    <h4>Company :<%= @job.company %></h4>
+
+    <h4>Experience :<%= @job.experience %></h4>
+
+    <h4>Salary :<%= @job.salary %></h4><br>
+
+    <%= button_to "apply here" %>
+    <br>
+    
+    <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+ 
+<% end %>

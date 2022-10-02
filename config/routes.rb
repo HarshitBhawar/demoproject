@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :users
   resources :jobs
-  
+  post "jobs/:id/edit"    => "jobs#edit"
+  post "jobs/:id"  => "jobs#destroy"
   # resources :jobs
 end
