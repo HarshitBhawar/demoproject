@@ -73,3 +73,9 @@ end
 gem 'tzinfo-data', '1.2014.5'
 gem 'devise'
 gem "letter_opener_web", group: :development
+gem "bootstrap", "~> 5.2"
+
+gem "jquery-rails", "~> 4.5"
+
+gem "sass-rails", "~> 6.0"
+
