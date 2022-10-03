@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      h1 {text-align: center;}
+      p {text-align: center;}
+      div {text-align: center;}
+       ul {text-align: center;}
+    </style>
     <title>Demoproject</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -34,7 +40,7 @@
     </a>
     <div style="padding-left: 10px;">
      
-      <a class="btn btn-outline-success" href="/" role="button">
+      <a class="btn btn-outline-success" href="/users/sign_out" role="button">
       Logout
       </a>
     </div>
@@ -42,14 +48,15 @@
   
   <% else %>
   <form class="form-inline">
-    <a class="btn btn-outline-primary" href="/login" role="button">
+    <a class="btn btn-outline-primary" href="/users/sign_in" role="button">
     Login
     </a>
     <div style="padding-left: 10px;">
-      <a class="btn btn-outline-success" href="/signup" role="button">
+      <a class="btn btn-outline-success" href="/users/sign_up" role="button">
       Sign Up
       </a>
     </div>
+    
   </form>
   <% end %>
 </nav>

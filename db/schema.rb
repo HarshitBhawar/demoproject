@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_01_094649) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_02_183740) do
+  create_table "applies", force: :cascade do |t|
+    t.string "name"
+    t.integer "tenthpercent"
+    t.integer "twelvepercent"
+    t.integer "ugpercent"
+    t.integer "pgpercent"
+    t.integer "user_id", null: false
+    t.integer "job_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_applies_on_job_id"
+    t.index ["user_id"], name: "index_applies_on_user_id"
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.string "company"
@@ -44,5 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_01_094649) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "applies", "jobs"
+  add_foreign_key "applies", "users"
   add_foreign_key "jobs", "users"
 end

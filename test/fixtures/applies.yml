@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  tenthpercent: 1
+  twelvepercent: 1
+  ugpercent: 1
+  pgpercent: 1
+  user: one
+  job: one
+
+two:
+  name: MyString
+  tenthpercent: 1
+  twelvepercent: 1
+  ugpercent: 1
+  pgpercent: 1
+  user: two
+  job: two
