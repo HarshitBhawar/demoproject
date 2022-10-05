@@ -1,7 +1,9 @@
 class AppliesController < ApplicationController
       def index
-        
-        @applys=Apply.all
+        binding.pry
+        @user=current_user
+        @job=@user.jobs
+        @applys=@job.applies.all
     end
     def new
         @apply=Apply.new

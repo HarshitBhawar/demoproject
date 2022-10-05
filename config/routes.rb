@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   post "jobs/:id/edit"    => "jobs#edit"
   post "jobs/:id"  => "jobs#destroy"
   post "/jobs/:job_id/applies/:id" => "applies#destroy"
-  
+  get "/applies" => "applies#index"
   # get "/jobs/allpost" => "jobs#allpost"
   # resources :jobs
 end
