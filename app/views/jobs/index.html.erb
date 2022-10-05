@@ -1,15 +1,15 @@
 <div>
-<h1>WELCOME </h1><br>
-
-
+<h1>WELCOME </h1>
 <%  if current_user.employer? %>
     <h1>Hello Employer </h1>
-    <h3><%= link_to "create job" ,new_job_path %></h3>
+  
+    <h4>My Post  </h4>
+    
     
     <ul>
         <% @jobss.each do |job| %>
         <li>
-        <%= link_to job.company, job %>
+        <h3><%= link_to job.company, job %></h3>
         </li>
         <% end %>
     </ul>

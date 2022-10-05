@@ -1,0 +1,41 @@
+<h1>APPLY HERE WITH DETAILS :</h1>
+
+<%= form_with model: [ @job, @job.applies.build ] do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+   
+  </div>
+
+  <div>
+    <%= form.label :tenthpercent %><br>
+    <%= form.text_field :tenthpercent %><br>
+   
+  </div>
+
+  <div>
+    <%= form.label :twelvepercent %><br>
+    <%= form.text_field :twelvepercent %><br>
+    
+  </div>
+
+  <div>
+    <%= form.label :ugpercent %><br>
+    <%= form.text_field :ugpercent %><br>
+    
+  </div>
+
+  <div>
+  <%= form.label :pgpercent %><br>
+  <%= form.text_field :pgpercent %><br>
+  </div>
+
+  <br>
+
+    
+    <div>
+      <%= form.submit 'apply now'%>
+    </div>
+
+
+<% end %>

@@ -6,7 +6,7 @@ class CreateApplies < ActiveRecord::Migration[7.0]
       t.integer :twelvepercent
       t.integer :ugpercent
       t.integer :pgpercent
-      t.references :user, null: false, foreign_key: true
+     
       t.references :job, null: false, foreign_key: true
 
       t.timestamps

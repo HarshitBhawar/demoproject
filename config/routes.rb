@@ -9,9 +9,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :users
-  resources :jobs
-  resources :applies
+  resources :jobs do
+    resources :applies
+    post :showuser 
+    
+  end
   post "jobs/:id/edit"    => "jobs#edit"
   post "jobs/:id"  => "jobs#destroy"
+  post "/jobs/:job_id/applies/:id" => "applies#destroy"
+  
+  # get "/jobs/allpost" => "jobs#allpost"
   # resources :jobs
 end

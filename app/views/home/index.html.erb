@@ -9,7 +9,7 @@
     <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
 <%  else current_user.applicant? %>
     <h1>hello applicant</h1>
-    <h3><%= link_to "click here" ,jobs_path %></h3>
+    
 
     <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
 

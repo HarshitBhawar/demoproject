@@ -5,7 +5,7 @@
       h1 {text-align: center;}
       p {text-align: center;}
       div {text-align: center;}
-       ul {text-align: center;}
+     
     </style>
     <title>Demoproject</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -29,24 +29,47 @@
   
  
   <a class="btn btn-outline-primary" >
-    <h1><B>Job Portal</B></h1>
+    <h3><B>Job Portal</B></h3>
     </a>
+<% if current_user.present? %>
 
-
-  <% if current_user.present? %>
+  <% if current_user.employer? %>
   <form class="form-inline">
     <a class="btn btn-outline-primary" href="/" role="button">
     Home
     </a>
     <div style="padding-left: 10px;">
-     
+      <a class="btn btn-outline-success" href="/jobs/new" role="button">
+      Create
+      </a>
+      <a class="btn btn-outline-success" href="/jobs" role="button">
+      My Post
+      </a>
       <a class="btn btn-outline-success" href="/users/sign_out" role="button">
       Logout
       </a>
     </div>
   </form>
+  <% else current_user.applicant? %>
+  <form class="form-inline">
+    <a class="btn btn-outline-primary" href="/" role="button">
+    Home
+    </a>
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-success" href="/jobs" role="button">
+      All Jobs
+      </a>
+      <a class="btn btn-outline-success" href="/applies" role="button">
+      Applied Jobs
+      </a>
+      <a class="btn btn-outline-success" href="/users/sign_out" role="button">
+      Logout
+      </a>
+    </div>
+  </form>
+  <% end %>
   
-  <% else %>
+  <% else  %>
   <form class="form-inline">
     <a class="btn btn-outline-primary" href="/users/sign_in" role="button">
     Login
@@ -58,7 +81,7 @@
     </div>
     
   </form>
-  <% end %>
+<% end %>
 </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

@@ -1,0 +1,9 @@
+<div>
+<h1>This are the users applied on  "<B><%=@job.company %></B>"</h1>
+<ul >
+    <% @job.applies.each do |applicant| %>
+       <li><h5> <p>NAME : <%= applicant.name %><br>10th PERCENT :<%= applicant.tenthpercent %><br>12 PERCENT :<%= applicant.twelvepercent %><br>GRADUATION PERCENT:<%= applicant.ugpercent %><br>POSTGRADUATION PERCENT :<%= applicant.pgpercent %><br> </p><h5></li>
+      
+     <% end %>
+</ul>
+    </div>
